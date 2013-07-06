@@ -517,11 +517,13 @@ static int  msm_rotator_buf_sync(unsigned long arg)
 
 	sync_info->acq_fen = fence;
 
+/* FIXME: add SYNC code to video driver
 	if (sync_info->acq_fen &&
 		(buf_sync.flags & MDP_BUF_SYNC_FLAG_WAIT)) {
 		msm_rotator_wait_for_fence(sync_info->acq_fen);
 		sync_info->acq_fen = NULL;
 	}
+*/
 
 	rel_sync_pt = sw_sync_pt_create(sync_info->timeline,
 			sync_info->timeline_value +
@@ -1975,8 +1977,11 @@ static int msm_rotator_start(unsigned long arg,
 
 	if (rc == 0 && copy_to_user((void __user *)arg, &info, sizeof(info)))
 		rc = -EFAULT;
+
+/* FIXME: add proper mapping code
 	if ((rc == 0) && (info.secure))
 		map_sec_resource(msm_rotator_dev);
+*/
 
 	sync_info = &msm_rotator_dev->sync_info[s];
 	if ((rc == 0) && (sync_info->initialized == false)) {
