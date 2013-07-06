@@ -1842,8 +1842,6 @@ static int msm_rotator_start(unsigned long arg,
 	}
 
 	switch (info.src.format) {
-<<<<<<< HEAD
-=======
 	case MDP_Y_CB_CR_H2V2:
 	case MDP_Y_CR_CB_H2V2:
 	/* To support Movie Studio, the following line needs to be removed */
@@ -1887,7 +1885,6 @@ static int msm_rotator_start(unsigned long arg,
 	}
 
 	switch (info.src.format) {
->>>>>>> 52f3adb... msm: rotator: Add proper checks for enabling Fast YUV
 	case MDP_RGB_565:
 	case MDP_BGR_565:
 	case MDP_RGB_888:
