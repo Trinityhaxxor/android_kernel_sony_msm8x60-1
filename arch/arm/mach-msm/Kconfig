@@ -103,6 +103,7 @@ config ARCH_MSM8X60
 	select MSM_XO
 	select MSM_GPIOMUX
 	select MSM_BUS_SCALING
+	select MSM_EVENT_TIMER
 	select MSM_SECURE_IO
 	select MSM_DALRPC
 	select MSM_QDSP6_APR
